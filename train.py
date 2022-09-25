@@ -291,7 +291,7 @@ if __name__ == '__main__':
     '''a small baidu image'''
     parser.add_argument('--root', type=str, default=os.environ.get('ROOT_IMG_DIR', 'word_imgs/'), help='the path of images')
     parser.add_argument('--train_csv', type=str, default=os.environ.get('TRAIN_TXT', 'train_1.txt'), help='the train samples')
-    parser.add_argument('--val_csv', type=str, default=os.environ.get('TRAIN_TXT', 'val_1.txt'), help='the val samples')
+    parser.add_argument('--val_csv', type=str, default=os.environ.get('VAL_TXT', 'val_1.txt'), help='the val samples')
     parser.add_argument('--baidu_alphabet', type=str, default=os.environ.get('BAIDU_ALPHABET', 'baidu_alphabet.txt'))
 
     
