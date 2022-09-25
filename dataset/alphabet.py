@@ -2,7 +2,7 @@ import os
 import glob
 
 # datas = glob.glob(r'/home/yangna/deepblue/OCR/EAST2/ICDAR_2015/ch4_training_localization_transcription_gt/*.txt')
-path = 'F:\\UGRP-TruckNumberPlate\\Bert_OCR.pytorch\\train.txt'
+path = os.environ.get('TRAIN_TXT', 'D:/DocumentAI/SinhalaOCR/train_1.txt')
 alphabet = []
 
 with open(path) as f:

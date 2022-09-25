@@ -262,15 +262,15 @@ def train(opt):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--experiment_name', help='Where to store logs and models')
+    parser.add_argument('--experiment_name', default='exp_1', help='Where to store logs and models')
     parser.add_argument('--train_data', default='eval', help='path to training dataset')
     parser.add_argument('--valid_data', default='eval', help='path to validation dataset')
     parser.add_argument('--manualSeed', type=int, default=666, help='for random seed setting')
-    parser.add_argument('--workers', type=int, help='number of data loading workers', default=4)
-    parser.add_argument('--batch_size', type=int, default=320, help='input batch size')
+    parser.add_argument('--workers', type=int, help='number of data loading workers', default=0)
+    parser.add_argument('--batch_size', type=int, default=8, help='input batch size')
     parser.add_argument('--num_iter', type=int, default=300000, help='number of iterations to train for')
-    parser.add_argument('--valInterval', type=int, default=4000, help='Interval between each validation')
-    parser.add_argument('--saveInterval', type=int, default=10000, help='Interval between each save')
+    parser.add_argument('--valInterval', type=int, default=10, help='Interval between each validation')
+    parser.add_argument('--saveInterval', type=int, default=100, help='Interval between each save')
     parser.add_argument('--disInterval', type=int, default=5, help='Interval betweet each show')
     #parser.add_argument('--continue_model', default='./saved_models/TPS-AsterRes-Bert-Bert_pred-Seed666/iter_50000.pth', help="path to model to continue training")
     parser.add_argument('--continue_model', default='', help="path to model to continue training")
@@ -289,10 +289,10 @@ if __name__ == '__main__':
     # parser.add_argument('--baidu_alphabet', type=str, default='/root/shenlan/deepblue/1_OCR/text_reco/dataset/BAIDU/baidu_alphabet_30w.txt')
     
     '''a small baidu image'''
-    parser.add_argument('--root', type=str, default='./dataset/BAIDU/images/', help='the path of images')
-    parser.add_argument('--train_csv', type=str, default='./dataset/BAIDU/small_train.txt', help='the train samples')
-    parser.add_argument('--val_csv', type=str, default='./dataset/BAIDU/small_train.txt', help='the val samples')
-    parser.add_argument('--baidu_alphabet', type=str, default='./dataset/BAIDU/baidu_alphabet.txt')
+    parser.add_argument('--root', type=str, default=os.environ.get('ROOT_IMG_DIR', 'word_imgs/'), help='the path of images')
+    parser.add_argument('--train_csv', type=str, default=os.environ.get('TRAIN_TXT', 'train_1.txt'), help='the train samples')
+    parser.add_argument('--val_csv', type=str, default=os.environ.get('TRAIN_TXT', 'val_1.txt'), help='the val samples')
+    parser.add_argument('--baidu_alphabet', type=str, default=os.environ.get('BAIDU_ALPHABET', 'baidu_alphabet.txt'))
 
     
     parser.add_argument('--max_seq', type=int, default=25, help='the maxium of the sequence length')
@@ -307,7 +307,7 @@ if __name__ == '__main__':
                         help='total data usage ratio, this ratio is multiplied to total number of data.')
     parser.add_argument('--batch_max_length', type=int, default=25, help='maximum-label-length')
     parser.add_argument('--imgH', type=int, default=32, help='the height of the input image')
-    parser.add_argument('--imgW', type=int, default=100, help='the width of the input image')
+    parser.add_argument('--imgW', type=int, default=160, help='the width of the input image')
     parser.add_argument('--rgb', action='store_true', help='use rgb input')
     parser.add_argument('--character', type=str, default='0123456789abcdefghijklmnopqrstuvwxyz', help='character label')
     parser.add_argument('--sensitive', action='store_true', help='for sensitive character mode')
