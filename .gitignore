@@ -10,7 +10,6 @@
 *.pth
 *.tar
 *.sh
-*.txt
 *.ipynb
 *.eps
 *.pdf
