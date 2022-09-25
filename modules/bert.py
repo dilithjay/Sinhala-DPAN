@@ -397,7 +397,7 @@ class Config(object):
     p_dim = 200
     ''' Parallel Attention Module '''
     dim_c = dim
-    max_vocab_size = 26             # 一张图片含有字符的最大长度
+    max_vocab_size = 64             # 一张图片含有字符的最大长度
 
     """ Two-stage Decoder """
     len_alphabet = 39               # 字符类别数量

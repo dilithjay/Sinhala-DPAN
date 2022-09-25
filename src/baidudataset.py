@@ -77,7 +77,7 @@ class BAIDUset(Dataset):
         return len(self.labels)
 
     def __getitem__(self, idx):
-        per_label = self.labels[idx].rstrip().split('\t')
+        per_label = self.labels[idx].rstrip().split()
 #         imgpath = os.path.join(self.root, per_label[0])         # 图片位置
 #         text = per_label[1].replace(' ','')                                     # 图片的文字label
         imgpath = os.path.join(self.root, per_label[0].rstrip())                 # 图片位置
