@@ -9,7 +9,7 @@ with open(path) as f:
     perdata = f.readlines()
 
 for pd in perdata:
-    pd = pd.rstrip().split('\t')
+    pd = pd.rstrip().split()
     alphabet += pd[-1]
 
 temp = ''.join(set(alphabet))
