@@ -268,7 +268,7 @@ if __name__ == '__main__':
     parser.add_argument('--manualSeed', type=int, default=666, help='for random seed setting')
     parser.add_argument('--workers', type=int, help='number of data loading workers', default=0)
     parser.add_argument('--batch_size', type=int, default=8, help='input batch size')
-    parser.add_argument('--num_iter', type=int, default=10000, help='number of iterations to train for')
+    parser.add_argument('--num_iter', type=int, default=30000, help='number of iterations to train for')
     parser.add_argument('--valInterval', type=int, default=100, help='Interval between each validation')
     parser.add_argument('--saveInterval', type=int, default=100, help='Interval between each save')
     parser.add_argument('--disInterval', type=int, default=5, help='Interval betweet each show')
